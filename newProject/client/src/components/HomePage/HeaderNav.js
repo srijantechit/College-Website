@@ -1,55 +1,25 @@
-import React, { useEffect, useState } from 'react';
 import '../../App.css';
-import { Link, useLocation } from 'react-router-dom';
-// import logo from 'images/logo.jpg';
-import { FaBars } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
-const HeaderNav = () => {
-    const [scroll, setScroll] = useState(false);
-    const [menuOpen, setMenuOpen] = useState(false);
-    const location = useLocation();
-    const logo='images/logo.jpg'
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 0) {
-                setScroll(true);
-            } else {
-                setScroll(false);
-            }
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
-    const toggleMenu = () => {
-        setMenuOpen(!menuOpen);
-    };
-
-    const getActiveClass = (path) => location.pathname === path ? 'active' : '';
-
-    return (
+const HeaderNav=()=>{
+    return(
         <div>
-            <nav className={`navbar ${scroll ? 'white-background' : ''} `}>
-                {/* <div className='logo-position'>
-                    <img src={process.env.PUBLIC_URL + logo} alt='clg-logo' className='clg-logo'/>
-                </div> */}
-                <div className={`ul ${menuOpen ? 'show' : ''}`}>
-                    <button className={getActiveClass('/')}><Link to="/" className='navigation-links'>Home</Link></button>
-                    <button className={getActiveClass('/aboutCollege')}><Link to="/aboutCollege" className='navigation-links'>AboutUs</Link></button>
-                    <button className={getActiveClass('/admissions')}><Link to="/admissions" className='navigation-links'>Admissions</Link></button>
-                    <button className={getActiveClass('/courses')}><Link to="/courses" className='navigation-links'>Courses</Link></button>
-                    <button className={getActiveClass('/campusLife')}><Link to="/campusLife" className='navigation-links'>Campus Life</Link></button>
-                    <button className={getActiveClass('/noticeBoard')}><Link to="/noticeBoard" className='navigation-links'>Notice Board</Link></button>
-                    <button className={getActiveClass('/contactUs')}><Link to="/contactUs" className='navigation-links'>ContactUs</Link></button>
-                </div>
-                <div className='menu-icon' onClick={toggleMenu}>
-                    <FaBars />
-                </div>
+            <nav className='navbar'>
+            <ul>
+                <li><Link to="/" className='navigation-links'>Home</Link></li>
+                <li><Link to="/facilities" className='navigation-links'>Facilities</Link></li>
+                <li><Link to="/events" className='navigation-links'>Events</Link></li>
+                <li><Link to="/activities" className='navigation-links'>Activities</Link></li>
+                <li><Link to="/courses" className='navigation-links'>Courses</Link></li>
+                <li><Link to="/alumini" className='navigation-links'>Alumini</Link> </li>
+                <li><Link to="/blogs" className='navigation-links'>Blogs </Link></li> 
+                <li><Link to="/gallery" className='navigation-links'>Gallery</Link> </li>
+                <li><Link to="/event" className='navigation-links'>Event </Link></li>
+            </ul>
             </nav>
         </div>
-    );
+ 
+    )
 }
 
 export default HeaderNav;

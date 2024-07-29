@@ -9,18 +9,24 @@ const Courses = () => {
     const courses = [
         {
             id: 1,
-            name: 'B.Sc. (Honours) (Agriculture)',
-            duration: '4 Years (8 Semesters)',
-            courseOverview:'The B.Sc. (Honours) Agriculture program is designed to provide students with a comprehensive understanding of agricultural science and practices. The course combines theoretical knowledge with practical skills to prepare students for various careers in agriculture and related fields. ',
-        
+            name: 'Computer Science',
+            description: ' development.This course focuses on programming, algorithms, and software development.This course focuses on programming, algorithms, and software development.This course focuses on programming, algorithms, and software development.This course focuses on programming, algorithms, and software development.This course focuses on programming, algorithms, and software development.This course focuses on programming, algorithms, and software development.This course focuses on programming, algorithms, and software development.This course focuses on programming, algorithms, and software development.This course focuses on programming, algorithms, and software development.This course focuses on programming, algorithms, and software development.This course focuses on programming, algorithms, and software development.',
         },
         {
             id: 2,
-            name: 'Agri. Diploma School',
-            duration: '2 Years',
-            courseOverview:'The Diploma in Agriculture program is designed to provide students with foundational knowledge and skills in various aspects of agriculture. This course prepares students for practical agricultural work and equips them with the necessary skills to manage small-scale farms or work in agricultural enterprises.'
+            name: 'Electrical Engineering',
+            description: 'Learn about electrical circuits, electronics, and power systems.Learn about electrical circuits, electronics, and power systems.Learn about electrical circuits, electronics, and power systems.This course focuses on programming, algorithms, and software development.This course focuses on programming, algorithms, and software development.This course focuses on programming, algorithms, and software development.This course focuses on programming, algorithms, and software development.This course focuses on programming, algorithms, and software development.This course focuses on programming, algorithms, and software Learn about electrical circuits, electronics, and power systems.v development.This course focuses on programming, algorithms, and software development.This course focuses on programming, algorithms, and software development.Learn about electrical circuits, electronics, and power systems.',
         },
-        
+        {
+            id: 3,
+            name: 'Mechanical Engineering',
+            description: 'Study mechanics, thermodynamics, and machine design principles.Study mechanics, thermodynamics, and machine design principles.Study mechanics, thermodynamics, and machine design principles.Study mechanics, thermodynamics, and machine design principles.Study mechanics, thermodynamics, and machine design principles.Study mechanics, thermodynamics, and machine design principles.Study mechanics, thermodynamics, and machine design principles.Study mechanics, thermodynamics, and machine design principles.Study mechanics, thermodynamics, and machine design principles.Study mechanics, thermodynamics, and machine design principles.Study mechanics, thermodynamics, and machine design principles.Study mechanics, thermodynamics, and machine design principles.Study mechanics, thermodynamics, and machine design principles.',
+        },
+        {
+            id: 4,
+            name: 'Business Administration',
+            description: 'Explore management, finance, marketing, and entrepreneurshipExplore management, finance, marketing, and entrepreneurship.Explore management, finance, marketing, and entrepreneurship.Explore management, finance, marketing, and entrepreneurship.Explore management, finance, marketing, and entrepreneurship.Explore management, finance, marketing, and entrepreneurship.Explore management, finance, marketing, and entrepreneurship.Explore management, finance, marketing, and entrepreneurship.Explore management, finance, marketing, and entrepreneurship.Explore management, finance, marketing, and entrepreneurship.Explore management, finance, marketing, and entrepreneurship.Explore management, finance, marketing, and entrepreneurship.Explore management, finance, marketing, and entrepreneurship.Explore management, finance, marketing, and entrepreneurship..',
+        },
     ];
 
     // Effect to set the first course as selected initially
@@ -38,37 +44,37 @@ const Courses = () => {
     
     return (
         <div className="courses-container">
-            {/* <div className='events-heading'>
-                <img src={img1} alt='backgrund' className='eventsbg'/>
-                <div className='headingText-cources'>C O U R C E S</div>
-            </div> */}
-            <div className='course-inner-container'>
-                <div className="course-list">
-                    {/* Render list of course names */}
-                    {courses.map(course => (
-                        <div>
-                            <div
-                                key={course.id}
-                                className={`course-item ${selectedCourse === course.id ? 'selected' : ''}`}
-                                onClick={() => handleCourseClick(course.id)}
-                                style={{ backgroundColor: selectedCourse === course.id ? '#6a994e' : 'inherit' }}
-                            >
-                                {course.name}
-                            </div>
+        <p className='important-headings courses-vertical-font'>
+            <p>C</p>
+            <p>O</p>
+            <p>U</p>
+            <p>R</p>
+            <p>S</p>
+            <p>E</p>
+            <p>S</p>
+        </p>
+            <div className="course-list">
+                {/* Render list of course names */}
+                {courses.map(course => (
+                    <div>
+                        <div
+                            key={course.id}
+                            className={`course-item ${selectedCourse === course.id ? 'selected' : ''}`}
+                            onClick={() => handleCourseClick(course.id)}
+                            style={{ backgroundColor: selectedCourse === course.id ? '#dce499' : 'inherit' }}
+                        >
+                            {course.name}
                         </div>
-                    ))}
-                </div>
-                <div className="course-details">
-                    {/* Render course description based on selectedCourse */}
-                    {selectedCourse !== null && (
-                        <div className="details-box-admission ">
-                            <div className='course-duration'>{courses.find(course => course.id === selectedCourse).duration} </div>
-                            <div className='course-desc'>{courses.find(course => course.id === selectedCourse).courseOverview} </div>
-                            
-                        </div>
-                        
-                    )}
-                </div>
+                    </div>
+                ))}
+            </div>
+            <div className="course-details">
+                {/* Render course description based on selectedCourse */}
+                {selectedCourse !== null && (
+                    <div className="details-box">
+                        {courses.find(course => course.id === selectedCourse).description}
+                    </div>
+                )}
             </div>
         </div>
     );
