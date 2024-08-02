@@ -4,46 +4,41 @@ import TopNav from './components/HomePage/TopNav';
 import Heading from './components/HomePage/Heading';
 import HeaderNav from './components/HomePage/HeaderNav';
 import ImageBackground from './components/HomePage/ImageBackground';
-import AboutUs from './components/HomePage/AboutUs';
-import CardSlider from './components/HomePage/CardSlider';
 import Footer from './components/HomePage/Footer';
-import ContactUs from './components/HomePage/ContactUs';
+import FooterContactUs from './components/HomePage/FooterContactUs';
+import AboutCollege from './components/NavigatedPages/AboutCollege';
+import ContactUs from './components/NavigatedPages/ContactUs';
 import Events from './components/NavigatedPages/Events';
-import Activities from './components/NavigatedPages/Activities';
 import Courses from './components/NavigatedPages/Courses';
-import Facilities from './components/NavigatedPages/Facilities';
-import Alumini from './components/NavigatedPages/Alumini';
-import Blogs from './components/NavigatedPages/Blogs';
-import Gallery from './components/NavigatedPages/Gallery';
-import './App.css';
+import NoticeBoard from './components/NavigatedPages/NoticeBoard';
+import CampusLife from './components/NavigatedPages/CampusLife';
+import Admissions from './components/NavigatedPages/Admissions';
+import LoginPage from './admin/LoginPage';
+import AdminDashboard from './admin/AdminDashboard';
+import PrivateRoute from './components/PrivateRoute';
 
+import './App.css';
 
 function App() {
   return (
     <Router>
       <div className="App">
-     
         <TopNav />
         <Heading />
         <HeaderNav />
         <Routes>
-          <Route path='/' Component={ImageBackground}/>
-          <Route path="/events" Component={Events}/>
-          <Route path="/activities" Component={Activities} />
-          <Route path='/facilities' Component={Facilities}/>
-          <Route path="/courses" Component={Courses}/>
-          <Route path="/alumini" Component={Alumini}/>
-          <Route path="/blogs" Component={Blogs}/>
-          <Route path="/gallery" Component={Gallery}/>
-          
-        </Routes>   
-        {/* <AboutUs /> */}
-        
-        {/* <Events/> */}
-        {/* Define your routes within <Routes> */}
-       
-
-        <ContactUs />
+          <Route path="/" Component={ImageBackground} />
+          <Route path="/aboutCollege" Component={AboutCollege} />
+          <Route path="/admissions" Component={Admissions} />
+          <Route path="/events" Component={Events} />
+          <Route path="/courses" Component={Courses} />
+          <Route path="/campusLife" Component={CampusLife} />
+          <Route path="/noticeBoard" Component={NoticeBoard} />
+          <Route path="/contactUs" Component={ContactUs} />
+          <Route path="/admin" Component={LoginPage} />
+          <Route path="/admin/dashboard" Component={PrivateRoute(AdminDashboard)} />
+        </Routes>
+        <FooterContactUs />
         <Footer />
       </div>
     </Router>

@@ -40,6 +40,12 @@ const ImageSlider = () => {
       };
   return (
     <div className='mt-28'>
+    <style>
+      {`
+      .slick-prev, .slick-next{
+      display: none !important}`
+      }
+    </style>
       <Slider {...settings} className="mb-52">
 
         <div className="carousel-item w-full 2xl:w-1/2">

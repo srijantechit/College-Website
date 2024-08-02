@@ -56,7 +56,20 @@ function ContactUs() {
   return (
     <div className='contactUs'>
         <div className='map-form-container'>
-            <div className='form-container'>
+        <div className="map-container">
+                <iframe 
+                  title="Google Map"
+                  src="https://www.google.com/maps/embed?pb=!1m19!1m8!1m3!1d7666381.79373021!2d77.0925628!3d20.2442941!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3bd0dde53830cd85%3A0xca24dbff9c801d89!2sCollege%20Of%20Agriculture%20Amkheda%2CTal-Malegaon%2CDist-Washim%2063VV%2BP28%20Amkheda%2CTal-Dist-%20Malegaon%2C%20Maharashtra%20444503!3m2!1d20.244294099999998!2d77.0925628!5e0!3m2!1sen!2sin!4v1720592657121!5m2!1sen!2sin"
+                  width="500" 
+                  height="400" 
+                  style={{ border: 0 }}
+                  allowfullscreen="" 
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+          </div>
+          
+          <div className='form-container'>
             <h2 className='form-heading'>Contact Us</h2>
             <form id="contactForm" onsubmit="return validateForm()">
                 <label for="name">Name:</label>
@@ -73,19 +86,8 @@ function ContactUs() {
 
                 <button type="submit" value="Submit" onClick={validateForm}>SUBMIT</button>
             </form>             
-            </div>
-            <div className="map-container">
-                <iframe 
-                  title="Google Map"
-                  src="https://www.google.com/maps/embed?pb=!1m19!1m8!1m3!1d7666381.79373021!2d77.0925628!3d20.2442941!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3bd0dde53830cd85%3A0xca24dbff9c801d89!2sCollege%20Of%20Agriculture%20Amkheda%2CTal-Malegaon%2CDist-Washim%2063VV%2BP28%20Amkheda%2CTal-Dist-%20Malegaon%2C%20Maharashtra%20444503!3m2!1d20.244294099999998!2d77.0925628!5e0!3m2!1sen!2sin!4v1720592657121!5m2!1sen!2sin"
-                  width="500" 
-                  height="400" 
-                  style={{ border: 0 }}
-                  allowfullscreen="" 
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
+          </div>
+            
         </div>
 
         <div className='contact-information'>

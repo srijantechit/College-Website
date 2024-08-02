@@ -48,7 +48,7 @@ const Testimonial = () => {
                 <div className="slides" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
                     {slides.map((slide, index) => (
                         <div className="slide" key={index}>
-                            <img className='student-img' src={process.env.PUBLIC_URL + slide.img} alt='slider-image' />
+                            {/* <img className='student-img' src={process.env.PUBLIC_URL + slide.img} alt='slider-image' /> */}
                             <div className='student-info'>
                             <h3 className='student-name'>{slide.name}</h3>
                             <p className='student-desc'>{slide.description}</p>

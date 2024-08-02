@@ -5,7 +5,7 @@ function AboutCollege() {
 
     const aboutUs ='images/about-us-page.jpg'
     const proff ='images/professor-img.jpg'
-    const president=''
+    const president='images/ceo_image1.jpeg'
 
 
   return (
@@ -21,9 +21,10 @@ function AboutCollege() {
                 <div className='president-card'>
                     <div className='proff-img'><img src={process.env.PUBLIC_URL + president} alt='president image'/></div>
                     <div className='proff-info'>
-                        <div className='proff-name'>Dr. Manikrao Babaraoji Jogdand</div>
-                        <div className='proff-edu'>President</div>
-                        <div className='proff-desc'> Effective transfer of agricultural technology from lab to land and diversity extension service for better dvelopmanet of rural community and farmers to develope practical oriented agricultural graduates using modern agriculture technology to promote quality eductaion, training ad research for the betterment and sustainable development of the students and farners to sustain the survival of Indian farming by using modern technology nature and promote human advancement. </div>
+                        <div className='proff-name'>Mr. Avinash Manikraoji Jogdand</div>
+                        <div className='proff-edu'>CEO, College of Agriculture, Amkheda.</div>
+                        <div className='proff-desc'> The college of Agriculture,Amkheda, Malegaon forays into education extend back to over four years and today stand as benchmarks for other who aspire to evaluate and render services to farmers through Education, Research and Extension activities. The college has over a total 100 acres of land under its possession for conducting research, field trials in addition to commercial production of vegetables. Our campus is a landmark in itself having a culture of commitment, transparency and teamwork. The faculty is committed to provide academic excellence and maintaining interdisciplinary approaches in its agricultural science programmes and also committed to provide students with abundant and diverse opportunities to explore and express themselves not only in education but also in sports, arts, culture and spiritualism. We are working on the platform of EHSAS (Education, Health, Social, Agriculture and Spiritual). The college has successfully shaping the
+                        students as quality human resource by imparting necessary skills and confidence among the agricultural graduates to start and operate their own business units through firsthand experience of running model farms and pilot-plant during the course of study. The focus approaches of the College are to increase the profitability of the farmer by efficient use of information technology and develop an agriculture based industry model with lowering input and proper marketing cost to make agriculture economically viable.</div>
                     </div>
                 </div>
                 <div className='history-clg'>
