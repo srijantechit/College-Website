@@ -13,10 +13,8 @@ import Courses from './components/NavigatedPages/Courses';
 import NoticeBoard from './components/NavigatedPages/NoticeBoard';
 import CampusLife from './components/NavigatedPages/CampusLife';
 import Admissions from './components/NavigatedPages/Admissions';
-import LoginPage from './admin/LoginPage';
-import AdminDashboard from './admin/AdminDashboard';
-import PrivateRoute from './components/PrivateRoute';
-
+import Login from './components/admin/Login';
+import Dashboard from './components/admin/Dashboard';
 import './App.css';
 
 function App() {
@@ -34,10 +32,10 @@ function App() {
           <Route path="/courses" Component={Courses} />
           <Route path="/campusLife" Component={CampusLife} />
           <Route path="/noticeBoard" Component={NoticeBoard} />
-          <Route path="/contactUs" Component={ContactUs} />
-          <Route path="/admin" Component={LoginPage} />
-          <Route path="/admin/dashboard" Component={PrivateRoute(AdminDashboard)} />
-        </Routes>
+          <Route path="/contactUs" Component={ContactUs}/>
+          <Route path='/adminLogin' Component={Login}/>
+          <Route path='/adminDashboard' Component={Dashboard}/>
+         </Routes>
         <FooterContactUs />
         <Footer />
       </div>

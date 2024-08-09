@@ -39,7 +39,7 @@ const ImageBackground=()=>{
                         alt="Movie" />
                     </figure>
                     <div className="card-body">
-                        <h2 className="card-title">Agriculture Polytechnic</h2>
+                        <h2 className="card-title">Agriculture Technical School</h2>
                         <p className='card-p'>In this hi-tech era, agriculture enterprise is much more than merely crop production or live-stock farming or allied activities.</p>
                         <div className="card-actions justify-end">
                         </div>

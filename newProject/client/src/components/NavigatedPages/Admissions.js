@@ -11,26 +11,26 @@ function Admissions() {
       id: 1,
       name: 'Admission Procedure',
       title1: 'Entrance Exam',
-      description1: 'Admission in universities or institutes offering B.Sc. in Agriculture course is done based on the Common Entrance Test conducted by the competent authority (MHTCET/JEE/NEET) the merit of admission will be determined by considering the 70% of total percent marks obtained in the respective group (PCB/PCM) and 30% of total percent marks in the eligibility examination/12th (Science) examination and the other weightages.',
+      description1: 'Admission in universities or institutes offering B.Sc. in Agriculture course is done based on the Common Entrance Test conducted by the competent authority (MHTCET/JEE/NEET) the merit of admission will be determined by considering the 100% of total percent marks obtained in the respective group (PCB/PCM).',
       title2: 'Application Process:',
       description2: 'Candidates need to apply online through the MCAER website or designated portals during the specified application period. The application typically involves filling out personal details, educational qualifications, and uploading required documents. Candidates need to apply online through the MCAER website or designated portals during the specified application period.',
       title3: 'Merit List and Seat Allotment:',
       description3: 'After counseling, a merit list is published based on candidates MHT-CET scores and preferences. Seats are allotted to candidates based on their ranks in the merit list and availability of seats in their preferred colleges.',
       title4: 'Direct Admission (Management Quota):',
-      description4: 'Some seats may also be available under management quota for which direct admission procedures may vary. Interested candidates should contact the college directly for details.'
+      description4: '20% seats may also be available under management quota for which direct admission procedures may vary. Interested candidates should contact the college directly for details.'
     },
     {
       id: 2,
       name: 'Scholarship',
     },
-    {
-      id: 3,
-      name: 'Eligibility',
-      title1: 'Eligibility Criteria:',
-      description1: 'Candidates must meet the eligibility criteria set by the college and the State Government of Maharashtra. This usually includes passing the 10+2 examination (or equivalent) with specific subjects such as Physics, Chemistry, Biology, and/or Mathematics.',
-      title2: 'Entrance Examination:',
-      description2: 'Candidates need to appear for the MHT-CET (Maharashtra Common Entrance Test) conducted by the State Government.'
-    },
+    // {
+    //   id: 3,
+    //   name: 'Eligibility',
+    //   title1: 'Eligibility Criteria:',
+    //   description1: 'Candidates must meet the eligibility criteria set by the college and the State Government of Maharashtra. This usually includes passing the 10+2 examination (or equivalent) with specific subjects such as Physics, Chemistry, Biology, and/or Mathematics.',
+    //   title2: 'Entrance Examination:',
+    //   description2: 'Candidates need to appear for the MHT-CET (Maharashtra Common Entrance Test) conducted by the State Government.'
+    // },
     {
       id: 4,
       name: 'Fee Structure',

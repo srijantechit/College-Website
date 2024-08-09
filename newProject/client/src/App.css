@@ -179,6 +179,9 @@ body{
   margin-right: 20px;
   color: black;
 }
+@media (max-width: 1024px) {
+
+}
 @media (max-width: 900px) {
   .ul {
     display: flex;
@@ -201,8 +204,8 @@ body{
 .navbar button {
   margin-left: 0px;
 }
-.navbar{
-  top: 192px;
+.navbar {
+  top: 255px;
 }
 .text-overlay {
   background-color: rgb(255, 255, 255);
@@ -224,8 +227,14 @@ body{
   font-size: x-small;
   justify-content: center;
 }
+.responsive-slider{
+  margin-top: 250px;
+}
 }
 @media (max-width: 500px) {
+  .responsive-slider{
+    margin-top: 135px;
+  }
   .ul {
     display: none;
     flex-direction: column;
@@ -262,12 +271,19 @@ body{
     display: block;
   }
 }
-
+@media (max-width:550px){
+  .navbar {
+    top: 209px;
+    justify-content: end;
+    padding-right: 3rem;
+    background-color: whitesmoke;
+}
+}
 @media (max-width: 400px) {
   .navbar {
-    top: 206px;
+    top: 230px;
     justify-content: end;
-    padding-right: 6rem;
+    padding-right: 2rem;
     background-color: whitesmoke;
   }
   .ul.show {
@@ -294,6 +310,7 @@ body{
 }
 
 
+
 .slick-dots{
   position: absolute;
   bottom: 20px;
@@ -310,6 +327,7 @@ body{
   height: 450px;
   padding: 0px 10px 0px 10px;
 }
+
 
 @media (max-width:550px){
   .width {
@@ -361,11 +379,7 @@ body{
   display:flex;
   justify-content: center;
 }
-@media (max-width: 580px)  {
 
-
-
-}
 
 .card-image{
   width: 250px;
@@ -656,9 +670,14 @@ margin-bottom: 0px;
   width: 57%;
   margin: 1rem;
 }
+@media (max-width: 900px){
+  .about-college {
+    margin-top: 300px;
+}
+}
 @media (min-width: 200px) and (max-width: 430px){
   .about-college {
-    margin-top: 215px;
+    margin-top: 230px;
 }
   .clg-info{
     display:flex;
@@ -704,6 +723,8 @@ margin-bottom: 0px;
     box-shadow: 1px 3px 5px 1px rgba(128, 128, 128, 0.644);
   }
 }
+
+
 .history-clg {
   margin: 1.5rem 0rem;
   font-size: 14px;
@@ -735,10 +756,10 @@ margin-bottom: 0px;
   margin: 1rem 1rem 1rem 0rem;
 }
 
-.management-container h1{
-  font-size: xx-large;
+.management-container h1 {
+  font-size: x-large;
   color: #337a28;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .management-table {
@@ -1110,32 +1131,48 @@ td:first-of-type, th:first-of-type {
 /* featured events*/
 
 .featured-event{
-max-width: 300px;
+  max-width: 300px;
 box-shadow: 1px 4px 4px 1px #7a7a7a7e;
+border-radius: 10px;
 }
 .featured-event-image{
+  max-width: 300px;
+  height: 100%;
   overflow: hidden;
   box-shadow: 1px 4px 4px 1px #7a7a7a7e;
+  border-radius: 10px;
 }
-.featured-event-image img{
+.featured-event-image:hover{
+  transform: scale(1.3);
+  transition: 0.8s;
+  box-shadow: 3px 4px 4px 2px #020202c9;
+  border: 4px solid white;
+  
+}
+.featured-event:hover{
+  transition: transform 0.5s ease-in-out;
+  
+}
+/* .featured-event-image img{
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
 
-}
+} */
 .details-box1 {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
+  width: 100%;
 }
 
 .inner-details-box {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
-  background-color: whitesmoke;
+  gap: 10px;
+  padding: 15px;
 }
 
 .event-card-horizontal {
@@ -1143,16 +1180,16 @@ box-shadow: 1px 4px 4px 1px #7a7a7a7e;
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 90%;
-  max-width: 600px;
-  margin: 10px;
+  width: 100%;
+  /* max-width: 600px; */
+  /* margin: 20px 20px 10px 20px; */
   overflow: hidden;
 }
 
 .event-image img {
-  width: 850px;
-  height: 220px;
-  /* object-fit: cover; */
+  width: 750px;
+  height: 100%;
+  object-fit: cover;
 }
 
 .event-content {
@@ -1252,7 +1289,23 @@ table td {
   display: flex;
 }
 
-
+.download {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+.download-note{
+  color: #5a5959;
+  margin-left: 10px;
+}
+.drive-link-buttton {
+  padding: 10px;
+  background-color: #229130;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 6px 6px 5px 3px #8080806e;
+  margin: 10px;
+}
 
 /**************************** TESTIMONIALS *****************************/
 
@@ -1738,6 +1791,18 @@ table td {
   background-color: #def0d47a;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: left;
+}
+.nss-file{
+  display: flex;
+  justify-content: end;
+  margin: 10px 5px;
+}
+.nss-button{
+  background-color: #256127;
+  color: white;
+  padding: 3px 5px;
+  border-radius: 7px;
+  margin: 0px 10px ;
 }
 
 @media (max-width:550px){

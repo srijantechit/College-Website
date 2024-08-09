@@ -30,6 +30,7 @@ function EducationalTour() {
               <p className='sub-card-desc'>{d.description}</p>
             </div> */}
           </div>
+          
         ))}
       </div>
     </div>

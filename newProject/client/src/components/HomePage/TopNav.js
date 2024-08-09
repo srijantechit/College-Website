@@ -11,7 +11,7 @@ const TopNav = () => {
                 <div className='contact-info-flex'>
                     <div className="contact-item">
                         <FontAwesomeIcon icon={faPhone} />
-                        <span className="info">+91 8805488695 / 9307979642</span>
+                        <span className="info">+91 9307979642 / 8805488695  </span>
                     </div>
                     <div className="contact-item">
                         <FontAwesomeIcon icon={faEnvelope} />

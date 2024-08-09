@@ -19,9 +19,10 @@ function AboutCollege() {
       <div className='clg-info'>
             <div className='history-container'>
                 <div className='president-card'>
-                    <div className='proff-img'><img src={process.env.PUBLIC_URL + president} alt='president image'/></div>
+                    <div className='proff-img display-flex'>
+                    <img src={process.env.PUBLIC_URL + president} alt='president image'/></div>
                     <div className='proff-info'>
-                        <div className='proff-name'>Mr. Avinash Manikraoji Jogdand</div>
+                    <div className='proff-name'>Mr. Avinash Manikraoji Jogdand</div>
                         <div className='proff-edu'>CEO, College of Agriculture, Amkheda.</div>
                         <div className='proff-desc'> The college of Agriculture,Amkheda, Malegaon forays into education extend back to over four years and today stand as benchmarks for other who aspire to evaluate and render services to farmers through Education, Research and Extension activities. The college has over a total 100 acres of land under its possession for conducting research, field trials in addition to commercial production of vegetables. Our campus is a landmark in itself having a culture of commitment, transparency and teamwork. The faculty is committed to provide academic excellence and maintaining interdisciplinary approaches in its agricultural science programmes and also committed to provide students with abundant and diverse opportunities to explore and express themselves not only in education but also in sports, arts, culture and spiritualism. We are working on the platform of EHSAS (Education, Health, Social, Agriculture and Spiritual). The college has successfully shaping the
                         students as quality human resource by imparting necessary skills and confidence among the agricultural graduates to start and operate their own business units through firsthand experience of running model farms and pilot-plant during the course of study. The focus approaches of the College are to increase the profitability of the farmer by efficient use of information technology and develop an agriculture based industry model with lowering input and proper marketing cost to make agriculture economically viable.</div>
@@ -29,14 +30,14 @@ function AboutCollege() {
                 </div>
                 <div className='history-clg'>
                     <div className='desc'>The college is approved by MCAER (Maharashtra Council of Agriculture Education & Research, Pune) & Affiliated to Dr. Panjabrao Deshmukh Krishi Vidyapeeth, Akola. Karmyogi Babaravaji Jogdand College of Agriculture is established in 31 July, 2015 with the minimum capacity of 60 students. The college is doing better progress under the excellent guidance and dedication of <strong> Dr. Manikrao Babaraoji Jogdand</strong>, President and other respected management committee members.</div>
-                    <div className='desc'>The Karmyogi Babaravaji Jogdand College of Agriculture, Amkheda  located at village Amkheda only 12km away from taluka place and 15 km from washim district. Geetai human kind development Trust was built in 2001 and is working for betterment of the village people. Trust having various sustainable funded activities, social funded avtivities, and Geetai events in its surroundings. </div>
+                    <div className='desc'>The Karmyogi Babaravaji Jogdand College of Agriculture, Amkheda  located at village Amkheda only 12km away from taluka place and 16 km from washim district. Geetai human kind development Trust was built in 2001 and is working for betterment of the village people. Trust having various sustainable funded activities, social funded avtivities, and Geetai events in its surroundings. </div>
                     <div className='desc'>Trust also has more than 40.41 ha. own land. On this land, various agronomical as well as horticultural crops have been cultivated. This land is facilitated with different modern agricultural techniques like advanced irrigation techniques (sprinkler, drip irrigation, fertigation), well equipped farm machineries (tractors, rotavator, cultivator, harvester and others). </div>
-                    <div className='desc'>Trust runs two colleges in their Premises such as Karmyogi babaravaji Jogdand College of Agriculture and Agriculture Technical School. Karmyogi babaravaji jogdand college of Agriculture is well connected by rail and road. The college is located 10 km from Jaulka (Rly.), 20 km from Washim and 12 km from Malegaon. Buses/auto services are frequently available from these places to reach college.</div>
+                    <div className='desc'>Trust runs two colleges in their Premises such as Karmyogi babaravaji Jogdand College of Agriculture and Agriculture Technical School. Karmyogi babaravaji jogdand college of Agriculture is well connected by rail and road. The college is located 10 km from Jaulka (Rly.), 16 km from Washim and 12 km from Malegaon. Buses/auto services are frequently available from these places to reach college.</div>
                 </div>
                 
             </div>
             <div class="management-container">
-                <h1>Management</h1>
+                <h1>Local Advisory Committee</h1>
                 <table class="management-table">
                     <thead>
                         <tr>
@@ -91,11 +92,11 @@ function AboutCollege() {
                         </tr>
                         <tr>
                             <td>Mr.Gajananrao Rambhaunji Pacharane</td>
-                            <td>Principal / Secretary</td>
+                            <td>Member</td>
                         </tr>
                         <tr>
                             <td>Mr. Bhagawat Mahadevraoji Jogdand</td>
-                            <td>Teaching Representative</td>
+                            <td>Member</td>
                         </tr>
                     </tbody>
                 </table>
@@ -152,7 +153,7 @@ function AboutCollege() {
             </tr>
             <tr>
                 <td>4</td>
-                <td>S.T. Jadhav</td>
+                <td>Mr. S.T. Jadhav</td>
                 <td>MSc (Agri)</td>
                 <td>SSAC</td>
                 <td>Assistant Professor</td>
@@ -166,7 +167,7 @@ function AboutCollege() {
             </tr>
             <tr>
                 <td>6</td>
-                <td>S.B. Wakudkar</td>
+                <td>Mr. S.B. Wakudkar</td>
                 <td>MSc (Agri)</td>
                 <td>Agronomy</td>
                 <td>Assistant Professor</td>

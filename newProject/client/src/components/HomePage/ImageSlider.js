@@ -39,7 +39,7 @@ const ImageSlider = () => {
         ],
       };
   return (
-    <div className='mt-28'>
+    <div className='mt-28 responsive-slider'>
     <style>
       {`
       .slick-prev, .slick-next{

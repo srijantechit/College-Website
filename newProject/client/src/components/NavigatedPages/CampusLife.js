@@ -14,7 +14,7 @@ import Sports from './Sports.js';
 import WifiCampus from '../NavigatedPages/WifiCampus.js'
 import { FaLink } from 'react-icons/fa';
 import Events from './Events'; // Import the Events component to use its content
-
+import Nss from './Nss'; 
 function CampusLife() {
   const [selectedSection, setSelectedSection] = useState(null);
 
@@ -25,8 +25,9 @@ function CampusLife() {
     { id: 3, name: 'Educational Tour', component: <EducationalTour />},
     { id: 4, name: 'Laboratory', component: <Laboratory />},
     { id: 5, name: 'Library', component: <Library />},
-    { id: 6, name: 'Hostel', component: <Hostel />}
-   
+    { id: 6, name: 'Hostel', component: <Hostel />},
+    { id: 7, name: 'NSS', component: <Nss />}
+      
   ];
 
   useEffect(() => {

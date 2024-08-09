@@ -253,36 +253,18 @@ import { useState, useEffect } from 'react';
 import { FaLink } from 'react-icons/fa';
 
 const featuredEvents=[
-  { 
-    imageUrl:'images/Events/featuredEvents/republicDay.jpg',
-  },
-  { 
-    imageUrl:'images/Events/featuredEvents/republicDay1.jpg',
-  },
-  { 
-    imageUrl:'images/Events/featuredEvents/blooddonation.jpeg',
-  },
-  { 
-    imageUrl:'images/Events/featuredEvents/blooddonation1.jpeg',
-  },
-  { 
-    imageUrl:'images/Events/featuredEvents/blooddonation2.jpeg',
-  },
-  { 
-    imageUrl:'images/Events/featuredEvents/savitriBaiPhule.jpg',
-  },
-  { 
-    imageUrl:'images/Events/featuredEvents/savitriBaiPhule1.jpg',
-  },
-  { 
-    imageUrl:'images/Events/featuredEvents/savitriBaiPhule2.jpg',
-  },
-  { 
-    imageUrl:'images/Events/featuredEvents/shivjayanti.jpg',
-  },
-  { 
-    imageUrl:'images/Events/featuredEvents/shivjayanti2.jpg',
-  },
+  {imageUrl:'images/Events/featuredEvents/republicDay.jpg',},
+  {imageUrl:'images/Events/featuredEvents/republicDay1.jpg',},
+  {imageUrl:'images/Events/featuredEvents/republicDay2.jpeg',},
+  {imageUrl:'images/Events/featuredEvents/bloodDonation.jpeg',},
+  {imageUrl:'images/Events/featuredEvents/bloodDonation1.jpeg',},
+  {imageUrl:'images/Events/featuredEvents/bloodDonation2.jpeg',},
+  {imageUrl:'images/Events/featuredEvents/SavitriBaiPhule.jpg',},
+  {imageUrl:'images/Events/featuredEvents/savitriBaiPhule1.jpg',},
+  {imageUrl:'images/Events/featuredEvents/savitriBaiPhule2.jpg',},
+  {imageUrl:'images/Events/featuredEvents/shivjayanti.jpg',},
+  {imageUrl:'images/Events/featuredEvents/shivjayanti2.jpg',},
+  {imageUrl:'images/Events/featuredEvents/shivjayanti3.jpeg',},
 ]
 const ongoingEvents = [
   {
@@ -307,9 +289,7 @@ const upcomingEvents = [
   { month: 'April', events: [{ img: 'path_to_image', title: 'Event 4', date: '2024-04-01', description: 'Event 4 description', link: 'https://example.com/event4' }] },
   { month: 'May', events: [{ img: 'path_to_image', title: 'Event 5', date: '2024-05-01', description: 'Event 5 description', link: 'https://example.com/event5' }] },
   { month: 'June', events: [{ img: 'path_to_image', title: 'Event 6', date: '2024-06-01', description: 'Event 6 description', link: 'https://example.com/event6' }] },
-  { month: 'July', events: [
-      { img: 'images/Events/tugOfWar.jpg', title: 'Monsoon Tug of War', date: '2024-07-28', description: 'Join us for an exciting Tug of War competition at our college! Teams will test their strength, strategy, and teamwork as they battle to pull their opponents across the line. It is a thrilling event that promises intense action and great fun. Gather your friends, form your teams, and get ready to show your might. Lets see which team will emerge victorious!', link: 'https://example.com/event7' },
-      ]},
+  { month: 'July', events: [{ img: 'images/Events/tugOfWar.jpg', title: 'Monsoon Tug of War', date: '2024-07-28', description: 'Join us for an exciting Tug of War competition at our college! Teams will test their strength, strategy, and teamwork as they battle to pull their opponents across the line. It is a thrilling event that promises intense action and great fun. Gather your friends, form your teams, and get ready to show your might. Lets see which team will emerge victorious!', link: 'https://example.com/event7' },]},
   { month: 'August', events: [{ img: 'images/Events/independenceDay.jpg', title: 'Independence Day', date: '2024-08-15', description: `Come and join us in celebrating Independence Day at our college! This special event will feature a variety of activities, including a flag hoisting ceremony, cultural performances, and patriotic speeches. It's a day to honor our nation's freedom and reflect on our shared history and values. Let's come together to celebrate the spirit of independence and unity. Don't miss this memorable occasion!`, link: 'https://example.com/event7' },{ img: 'images/Events/rakshaBandhan.jpg', title: 'Raksha Bandhan', date: '2024-08-19', description: 'Raksha Bandhan, is a festival celebrating the bond between brothers and sisters. During the festival, sisters tie a rakhi around their brothers, symbolizing love and protection, while brothers give gifts and promise to protect their sisters in return. ', link: 'https://example.com/event8' }, ]},
   { month: 'September', events: [{ img: 'images/Events/ganeshJayanti.jpg', title: 'Ganesh Jayanti', date: '2024-09-07', description: 'Ganesh Jayanti, is the celebration of the birth of Lord Ganesha. The festival involves various cultural performances dedicated to Lord Ganesha. Join us for the event!!!', link: 'https://example.com/event9' }] },
   { month: 'October', events: [{ img: 'path_to_image', title: 'Event 10', date: '2024-10-01', description: 'Event 10 description', link: 'https://example.com/event10' },{ img: 'path_to_image', title: 'Event 10', date: '2024-10-01', description: 'Event 10 description', link: 'https://example.com/event10' }] },
@@ -326,7 +306,7 @@ const pastEvents = [
   { srNo: 2, eventName: 'Republic Day', date: '2023-01-26', description: 'Past Event 2 description', link: 'https://example.com/past-event2' }
 ];
 
-const downloadDetails = 'You can download the images from here';
+const downloadDetails = 'You will be redirected to another link';
 
 const events = [
   { id: 1, name: 'Featured Events', details: featuredEvents },
@@ -362,7 +342,7 @@ function Events() {
   };
 
   const getCurrentMonthFilteredDetails = () => {
-    return events[1].details.filter((month, index) => index >= currentMonthIndex);
+    return events[2].details.filter((month, index) => index >= currentMonthIndex);
   };
 
   return (
@@ -384,9 +364,9 @@ function Events() {
               {selectedEvents === 1 && (
               <div className='inner-details-box pt-5'>
                 {featuredEvents.map((detail, index) => (
-                  <div key={index} className="featured-event">
+                  <div key={index} className="featured-event ">
                     {/* <div className="featured-event-image"> */}
-                      <img src={process.env.PUBLIC_URL + detail.imageUrl} alt="Event" />
+                      <img  key={index} src={process.env.PUBLIC_URL + detail.imageUrl} alt="Event" className='featured-event-image' />
                     {/* </div>/ */}
                     {/* <div className="event-content">
                       <h2>{detail.title}</h2>
@@ -478,8 +458,12 @@ function Events() {
             )}
             {selectedEvents === 5 && (
               <div>
-                <h2 className='event-main-title'>Download</h2>
-                <p>{downloadDetails}</p>
+                <h2 className='event-main-title'>Download Katta</h2>
+                
+                <div className='download'>
+                  <a href="https://drive.google.com/drive/folders/1vocVXOTla9ssZzmDtqvyotrm_wlYE3tw" target='_blank'><button className='drive-link-buttton'>Click here to download the photos and videos</button></a>
+                </div>
+                <p className='download-note'>{downloadDetails}</p>
               </div>
             )}
           </div>
@@ -490,3 +474,193 @@ function Events() {
 }
 
 export default Events;
+
+
+
+// import '../../App.css';
+// import { useState, useEffect } from 'react';
+// import { FaLink } from 'react-icons/fa';
+
+// const featuredEvents = [
+//   { imageUrl: 'images/Events/featuredEvents/republicDay.jpg' },
+//   { imageUrl: 'images/Events/featuredEvents/republicDay1.jpg' },
+//   { imageUrl: 'images/Events/featuredEvents/blooddonation.jpeg' },
+//   { imageUrl: 'images/Events/featuredEvents/blooddonation1.jpeg' },
+//   { imageUrl: 'images/Events/featuredEvents/blooddonation2.jpeg' },
+//   { imageUrl: 'images/Events/featuredEvents/savitriBaiPhule.jpg' },
+//   { imageUrl: 'images/Events/featuredEvents/savitriBaiPhule1.jpg' },
+//   { imageUrl: 'images/Events/featuredEvents/savitriBaiPhule2.jpg' },
+//   { imageUrl: 'images/Events/featuredEvents/shivjayanti.jpg' },
+//   { imageUrl: 'images/Events/featuredEvents/shivjayanti2.jpg' },
+// ];
+
+// const ongoingEvents = [
+//   {
+//     title: "NSS Camp",
+//     date: "24 July 2024",
+//     description: "Join us for an insightful workshop on sustainable farming practices. This event will cover a range of topics including soil health, crop rotation, organic fertilizers, and water conservation techniques. Attendees will gain practical knowledge from experts in the field and learn how to implement sustainable practices in their own farming operations.",
+//     imageUrl: "images/Events/NSS.png"
+//   },
+//   {
+//     title: "Tree Plantation",
+//     date: "25 July 2024",
+//     description: "Join us for an insightful workshop on sustainable farming practices. This event will cover a range of topics including soil health, crop rotation, organic fertilizers, and water conservation techniques. Attendees will gain practical knowledge from experts in the field and learn how to implement sustainable practices in their own farming operations.",
+//     imageUrl: "images/Events/treePlantation.jpg"
+//   },
+// ];
+
+// const upcomingEvents = [
+//   { month: 'January', events: [{ img: 'path_to_image', title: 'Event 1', date: '2024-01-01', description: 'Event 1 description', link: 'https://example.com/event1' }] },
+//   { month: 'February', events: [{ img: 'path_to_image', title: 'Event 2', date: '2024-02-01', description: 'Event 2 description', link: 'https://example.com/event2' }] },
+//   { month: 'March', events: [{ img: 'path_to_image', title: 'Event 3', date: '2024-03-01', description: 'Event 3 description', link: 'https://example.com/event3' }] },
+//   { month: 'April', events: [{ img: 'path_to_image', title: 'Event 4', date: '2024-04-01', description: 'Event 4 description', link: 'https://example.com/event4' }] },
+//   { month: 'May', events: [{ img: 'path_to_image', title: 'Event 5', date: '2024-05-01', description: 'Event 5 description', link: 'https://example.com/event5' }] },
+//   { month: 'June', events: [{ img: 'path_to_image', title: 'Event 6', date: '2024-06-01', description: 'Event 6 description', link: 'https://example.com/event6' }] },
+//   { month: 'July', events: [{ img: 'images/Events/tugOfWar.jpg', title: 'Monsoon Tug of War', date: '2024-07-28', description: 'Join us for an exciting Tug of War competition at our college! Teams will test their strength, strategy, and teamwork as they battle to pull their opponents across the line. It is a thrilling event that promises intense action and great fun. Gather your friends, form your teams, and get ready to show your might. Lets see which team will emerge victorious!', link: 'https://example.com/event7' }] },
+//   { month: 'August', events: [{ img: 'images/Events/independenceDay.jpg', title: 'Independence Day', date: '2024-08-15', description: `Come and join us in celebrating Independence Day at our college! This special event will feature a variety of activities, including a flag hoisting ceremony, cultural performances, and patriotic speeches. It's a day to honor our nation's freedom and reflect on our shared history and values. Let's come together to celebrate the spirit of independence and unity. Don't miss this memorable occasion!`, link: 'https://example.com/event7' }, { img: 'images/Events/rakshaBandhan.jpg', title: 'Raksha Bandhan', date: '2024-08-19', description: 'Raksha Bandhan, is a festival celebrating the bond between brothers and sisters. During the festival, sisters tie a rakhi around their brothers, symbolizing love and protection, while brothers give gifts and promise to protect their sisters in return. ', link: 'https://example.com/event8' }] },
+//   { month: 'September', events: [{ img: 'images/Events/ganeshJayanti.jpg', title: 'Ganesh Jayanti', date: '2024-09-07', description: 'Ganesh Jayanti, is the celebration of the birth of Lord Ganesha. The festival involves various cultural performances dedicated to Lord Ganesha. Join us for the event!!!', link: 'https://example.com/event9' }] },
+//   { month: 'October', events: [{ img: 'path_to_image', title: 'Event 10', date: '2024-10-01', description: 'Event 10 description', link: 'https://example.com/event10' }, { img: 'path_to_image', title: 'Event 10', date: '2024-10-01', description: 'Event 10 description', link: 'https://example.com/event10' }] },
+//   { month: 'November', events: [{ img: 'path_to_image', title: 'Event 11', date: '2024-11-01', description: 'Event 11 description', link: 'https://example.com/event11' }, { img: 'path_to_image', title: 'Event 11', date: '2024-11-01', description: 'Event 11 description', link: 'https://example.com/event11' }] },
+//   { month: 'December', events: [{ img: 'path_to_image', title: 'Event 12', date: '2024-12-01', description: 'Event 12 description', link: 'https://example.com/event12' }, { img: 'path_to_image', title: 'Event 12', date: '2024-12-01', description: 'Event 12 description', link: 'https://example.com/event12' }] }
+// ];
+
+// const pastEvents = [
+//   { srNo: 1, eventName: 'Shiv Jayanti', date: '2023-02-19', description: 'Celebration of the birth anniversary of Chhatrapati Shivaji Maharaj', link: 'https://drive.google.com/drive/folders/1ql4wb6nqZ80QN9h8yr1Pua_DNrwQDNQ4' },
+//   { srNo: 2, eventName: 'Republic Day', date: '2023-01-26', description: 'Past Event 2 description', link: 'https://example.com/past-event2' }
+// ];
+
+// const downloadDetails = 'You can download the images from here';
+
+// const events = [
+//   { id: 1, name: 'Featured Events', details: featuredEvents },
+//   { id: 2, name: 'Ongoing Events', details: ongoingEvents },
+//   { id: 3, name: 'Upcoming Events', details: upcomingEvents },
+//   { id: 4, name: 'Past Events', details: pastEvents },
+//   { id: 5, name: 'Download', details: downloadDetails }
+// ];
+
+// function Events() {
+//   const [selectedEvents, setSelectedEvents] = useState(null);
+//   const [selectedMonth, setSelectedMonth] = useState(null);
+//   const [currentMonthIndex, setCurrentMonthIndex] = useState(new Date().getMonth());
+
+//   useEffect(() => {
+//     if (events.length > 0) {
+//       setSelectedEvents(events[0].id);
+//     }
+//   }, []);
+
+//   const handleEventsClick = (eventsId) => {
+//     setSelectedEvents(eventsId);
+//     setSelectedMonth(null);
+
+//     if (eventsId === 3) {
+//       const currentMonth = new Date().getMonth();
+//       setCurrentMonthIndex(currentMonth);
+//     }
+//   };
+
+//   const handleMonthClick = (monthName) => {
+//     setSelectedMonth(monthName);
+//   };
+
+//   const getCurrentMonthFilteredDetails = () => {
+//     return events[2].details.filter((month, index) => index >= currentMonthIndex);
+//   };
+
+//   return (
+//     <div className="events-container">
+//       <div className="events-list">
+//         {events.map(event => (
+//           <div
+//             key={event.id}
+//             className={`event-item ${selectedEvents === event.id ? 'selected' : ''}`}
+//             onClick={() => handleEventsClick(event.id)}
+//           >
+//             {event.name}
+//           </div>
+//         ))}
+//       </div>
+//       <div className="events-details">
+//         {selectedEvents === 1 && (
+//           <div className="featured-events">
+//             {featuredEvents.map((event, index) => (
+//               <img key={index} src={event.imageUrl} alt={`Featured event ${index + 1}`} />
+//             ))}
+//           </div>
+//         )}
+//         {selectedEvents === 2 && (
+//           <div className="ongoing-events">
+//             {ongoingEvents.map((event, index) => (
+//               <div key={index} className="ongoing-event">
+//                 <img src={event.imageUrl} alt={event.title} />
+//                 <h3>{event.title}</h3>
+//                 <p>{event.date}</p>
+//                 <p>{event.description}</p>
+//               </div>
+//             ))}
+//           </div>
+//         )}
+//         {selectedEvents === 3 && (
+//           <div className="upcoming-events">
+//             {getCurrentMonthFilteredDetails().map((month, index) => (
+//               <div key={index} className="month-details">
+//                 <div className={`month-name ${selectedMonth === month.month ? 'selected-month' : ''}`} onClick={() => handleMonthClick(month.month)}>
+//                   {month.month}
+//                 </div>
+//                 {selectedMonth === month.month && (
+//                   <div className="event-details">
+//                     {month.events.map((event, idx) => (
+//                       <div key={idx} className="event-item">
+//                         <img src={event.img} alt={event.title} />
+//                         <h3>{event.title}</h3>
+//                         <p>{event.date}</p>
+//                         <p>{event.description}</p>
+//                         <a href={event.link} target="_blank" rel="noopener noreferrer">
+//                           <FaLink /> More Details
+//                         </a>
+//                       </div>
+//                     ))}
+//                   </div>
+//                 )}
+//               </div>
+//             ))}
+//           </div>
+//         )}
+//         {selectedEvents === 4 && (
+//           <div className="past-events">
+//             <table>
+//               <thead>
+//                 <tr>
+//                   <th>Sr No</th>
+//                   <th>Event Name</th>
+//                   <th>Date</th>
+//                   <th>Description</th>
+//                   <th>Link</th>
+//                 </tr>
+//               </thead>
+//               <tbody>
+//                 {pastEvents.map((event, index) => (
+//                   <tr key={index}>
+//                     <td>{event.srNo}</td>
+//                     <td>{event.eventName}</td>
+//                     <td>{event.date}</td>
+//                     <td>{event.description}</td>
+//                     <td><a href={event.link} target="_blank" rel="noopener noreferrer"><FaLink /> More Details</a></td>
+//                   </tr>
+//                 ))}
+//               </tbody>
+//             </table>
+//           </div>
+//         )}
+//         {selectedEvents === 5 && (
+//           <div className="download-section">
+//             <p>{downloadDetails}</p>
+//           </div>
+//         )}
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default Events;
