@@ -1,98 +1,102 @@
-const express = require('express');
-const nodemailer = require('nodemailer');
-const bodyParser = require('body-parser');
-const mysql = require('mysql2');
-const bcrypt = require('bcryptjs');
-const cors = require('cors');
-require('dotenv').config();
+const express = require("express");
+const cors = require("cors");
+const nodemailer = require("nodemailer");
+const mysql = require("mysql2");
 
 const app = express();
-const port = process.env.PORT || 3001;
+const PORT = 5000;
 
-
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+// Middleware
 app.use(cors());
+app.use(express.json());
 
-//contact us form data submission :-
-  // Create a route to handle the form submission
-  app.post('/send-email', (req, res) => {
-    const { name, mobile, message } = req.body;
+// Create a connection to the MySQL database
+const db = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "root",  // Replace with your MySQL root password
+  database: "clg_website",      // Replace with your database name
+});
 
-    // Create a transporter for sending email
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-          user: 'nehalsalunke2000@gmail.com',  // Replace with your Gmail address
-          pass: 'Swaraj1234@'    // Replace with your Gmail password or App Password
-      }
-  });
+// Connect to the database
+db.connect((err) => {
+  if (err) {
+    console.error("Error connecting to the database:", err);
+    return;
+  }
+  console.log("Connected to the MySQL database.");
+});
 
-    // Set up email data
-    let mailOptions = {
-        from: 'nehalsalunke2000@gmail.com',
-        to: 'nehals@myospaz.in',
-        subject: 'New Contact Us Message',
-        text: `Name: ${name}\nMobile: ${mobile}\nMessage: ${message}`
-    };
+// Nodemailer transporter setup
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: "nehalsalunke2000@gmail.com", // Replace with your Gmail address
+    pass: "Swaraj1234@",        // Replace with your Gmail password or app-specific password
+  },
+});
 
-    // Send the email
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            console.log(error);
-            return res.status(500).send('Error sending email');
-        }
-        console.log('Email sent: ' + info.response);
-        res.send('Email sent successfully');
-    });
-  });
-// end contact us form data submission
+// Email sending function
+const sendEmail = (subject, text) => {
+  const mailOptions = {
+    from: "nehalsalunke2000@gmail.com",  
+    to: "nehals@myospaz.in",    
+    subject: subject,
+    text: text,
+  };
 
-//admim login 
-  const db = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-  });
-
-  db.connect((err) => {
-    if (err) {
-      console.error('Database connection failed:', err.stack);
-      return;
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.error("Error sending email:", error);
+    } else {
+      console.log("Email sent: " + info.response);
     }
-    console.log('Connected to database.');
   });
+};
 
-  app.post('/admin/login', (req, res) => {
-    const { username, password } = req.body;
+// API endpoint to handle contact form submissions
 
-    const query = 'SELECT * FROM admins WHERE username = ?';
-    db.query(query, [username], (err, results) => {
-      if (err) {
-        return res.status(500).send('Server error');
-      }
-      if (results.length === 0) {
-        return res.status(401).send('Invalid username or password');
-      }
+app.post("/send-email", (req, res) => {
+  const { name, email, mobile, message } = req.body;
 
-      const admin = results[0];
-      bcrypt.compare(password, admin.password, (err, isMatch) => {
-        if (err) {
-          return res.status(500).send('Server error');
-        }
-        if (!isMatch) {
-          return res.status(401).send('Invalid username or password');
-        }
-
-        res.send('Login successful');
-      });
-    });
+  const query =
+    "INSERT INTO contact_us (name, email, mobile_no, message) VALUES (?, ?, ?, ?)";
+  db.query(query, [name, email, mobile, message], (err) => {
+    if (err) {
+      console.error("Error storing Enquiry data: ", err);
+      return res.status(500).send("Error storing Enquiry data");
+    }
+    sendEmail(
+      "New Enquiry Form Submission",
+      `You have received a new enquiry form submission:\n\nName: ${name}\nEmail: ${email}\nPhone: ${mobile}\nMessage: ${message}`
+    );
+    res.status(200).send("Enquiry email sent successfully");
   });
-// end admin login
+});
+
+// app.post("/send-email", (req, res) => {
+//   const name = "John Doe";
+//   const email = "john.doe@example.com";
+//   const mobile_no = "1234567890";
+//   const message = "Test message";
+
+//   const query =
+//     "INSERT INTO contact_us (name, email, mobile_no, message) VALUES (?, ?, ?, ?)";
+//   db.query(query, [name, email, mobile_no, message], (err) => {
+//     if (err) {
+//       console.error("Error storing Enquiry data: ", err.message);
+//       return res.status(500).send("Error storing Enquiry data");
+//     }
+//     sendEmail(
+//       "New Enquiry Form Submission",
+//       `You have received a new enquiry form submission:\n\nName: ${name}\nEmail: ${email}\nPhone: ${mobile_no}\nMessage: ${message}`
+//     );
+//     res.status(200).send("Enquiry email sent successfully");
+//   });
+// });
 
 
-
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+// Start the server
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });

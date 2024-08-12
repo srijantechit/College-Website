@@ -2214,7 +2214,7 @@ table td {
 }
  /*************************************** NOTICE BOARD **************************/
  .notice{
-  margin: 200px 10px;
+  margin: 200px 10px 0px 10px;
   background-color: #ffffff;
  }
  .notice-cards{

@@ -111,13 +111,14 @@
 // export default ContactUs;
 
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function ContactUs() {
   const location = 'images/location.png';
   const callUs = 'images/callUs.png';
   const emailUs = 'images/emailUs.png';
+  const [contactForms, setContactForms] = useState([]);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -125,34 +126,48 @@ function ContactUs() {
     mobile: '',
     message: ''
   });
+  
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [e.target.name]: e.target.value
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+ 
+
+    // useEffect(() => {
+    //   // Fetch contact form data
+    //   axios
+    //     .get("http://localhost:5000/admin/contact-forms")
+    //     .then((response) => {
+    //       setContactForms(response.data);
+    //     })
+    //     .catch((error) => {
+    //       console.error("Error fetching contact form data:", error);
+    //     });
+    // }, []);
+
 
     // Validate form data if needed
-
-    try {
-      await axios.post('http://localhost:3001/send-email', formData);
-      alert('Message sent successfully!');
-      // Optionally clear the form
-      setFormData({
-        name: '',
-        email: '',
-        mobile: '',
-        message: ''
-      });
-    } catch (error) {
-      console.error('There was an error sending the email!', error);
-      alert('Failed to send message. Please try again later.');
-    }
+    const handleSubmit = async (e) => {
+      e.preventDefault();  
+      try {
+        const response = await axios.post('http://localhost:5000/send-email', formData);
+        console.log(response.data);
+        alert('Message sent successfully!');
+        // Optionally clear the form
+        setFormData({
+          name: '',
+          email: '',
+          mobile: '',
+          message: ''
+        });
+      } catch (error) {
+        console.error('There was an error sending the email!', error);
+        alert('Failed to send message. Please try again later.');
+      }
   };
 
   return (
