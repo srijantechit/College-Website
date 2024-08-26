@@ -1,10 +1,11 @@
 import React from 'react';
 import './Dashboard.css'
+import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 function Dashboard() {
     const [selectedSection, setSelectedSection] = useState(null);
-
+    const navigate = useNavigate(); // Initialize navigate
     const sections = [
       { id: 1, name: 'Ongoing Event'},
       { id: 2, name: 'Notice Board'},
@@ -20,7 +21,10 @@ function Dashboard() {
     const handleSectionClick = (sectionId) => {
       setSelectedSection(sectionId);
     };
-  
+    const handleLogout = () => {
+      localStorage.removeItem('isAuthenticated'); // Clear authentication status
+      navigate('/adminLogin'); // Redirect to the login page
+    };
     return (
       <div>
         <div className="campus-life-container">
@@ -34,11 +38,16 @@ function Dashboard() {
                 {section.name}
               </div>
             ))}
+                                 {/* logout button */}
+            <button type='submit' onClick={handleLogout} >Log Out</button>
           </div>
+
           <div className="section-details">
             {selectedSection !== null && (
               <div className="details-box">
-                {sections.find(section => section.id === selectedSection).component || (
+                  
+
+                {/* {sections.find(section => section.id === selectedSection).component || (
                   <div>
                     <h2>{sections.find(section => section.id === selectedSection).name}</h2>
                     <p>{sections.find(section => section.id === selectedSection).content || 'No additional information available.'}</p>
@@ -50,7 +59,7 @@ function Dashboard() {
                       />
                     )}
                   </div>
-                )}
+                )} */}
               </div>
             )}
           </div>

@@ -22,8 +22,8 @@ function App() {
     <Router>
       <div className="App">
         <TopNav />
-        <Heading />
-        <HeaderNav />
+        <Heading /> <HeaderNav />   
+       
         <Routes>
           <Route path="/" Component={ImageBackground} />
           <Route path="/aboutCollege" Component={AboutCollege} />
@@ -34,7 +34,7 @@ function App() {
           <Route path="/noticeBoard" Component={NoticeBoard} />
           <Route path="/contactUs" Component={ContactUs}/>
           <Route path='/adminLogin' Component={Login}/>
-          <Route path='/adminDashboard' Component={Dashboard}/>
+          <Route path='/admin/dashboard' Component={Dashboard}/>
          </Routes>
         <FooterContactUs />
         <Footer />

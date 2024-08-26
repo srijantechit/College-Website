@@ -110,92 +110,94 @@ function AboutCollege() {
                         {/* <div className='subHeading'>
                             <h2>Faculty Members</h2>
                         </div> */}
-        <div className='proff-card'>
-            <div className='proff-img'><img src={process.env.PUBLIC_URL + proff} alt='professor image'/></div>
-            <div className='proff-info'>
-                <div className='proff-name'>Dr. R. M. Kshirsagar</div>
-                <div className='proff-edu'>M.Sc. Ph.D. (Agril Botany)</div>
-                <div className='proff-desc'> Effective transfer of agricultural technology from lab to land and diversity extension service for better dvelopmanet of rural community and farmers to develope practical oriented agricultural graduates using modern agriculture technology to promote quality eductaion, training ad research for the betterment and sustainable development of the students and farners to sustain the survival of Indian farming by using modern technology nature and promote human advancement. </div>
+      <div className='proffs-container'>
+            <div className='proff-card'>
+                <div className='proff-img'><img src={process.env.PUBLIC_URL + proff} alt='professor image'/></div>
+                <div className='proff-info'>
+                    <div className='proff-name'>Dr. R. M. Kshirsagar</div>
+                    <div className='proff-edu'>M.Sc. Ph.D. (Agril Botany)</div>
+                    <div className='proff-desc'> Effective transfer of agricultural technology from lab to land and diversity extension service for better dvelopmanet of rural community and farmers to develope practical oriented agricultural graduates using modern agriculture technology to promote quality eductaion, training ad research for the betterment and sustainable development of the students and farners to sustain the survival of Indian farming by using modern technology nature and promote human advancement. </div>
+                </div>
             </div>
         </div>
-      <div class="table-container">
-    <table>
-        <thead>
-            <tr>
-                <th>Sr. No.</th>
-                <th>Name</th>
-                <th>Qualification</th>
-                <th>Department</th>
-                <th>Designation</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Dr. R.M. Kshirsagar</td>
-                <td>MSc PhD</td>
-                <td>Agril Botany</td>
-                <td>Principal</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Mr. A.D. Manvatkar</td>
-                <td>MSc (Agri)</td>
-                <td>Agronomy</td>
-                <td>Vice Principal</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Mr. P.T. Nichal</td>
-                <td>MSc (Agri)</td>
-                <td>Plant Pathology</td>
-                <td>Assistant Professor/ Education Incharge</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Mr. S.T. Jadhav</td>
-                <td>MSc (Agri)</td>
-                <td>SSAC</td>
-                <td>Assistant Professor</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>Mr. S.M. Gaikwad</td>
-                <td>MSc (Agri)</td>
-                <td>Agril Botany</td>
-                <td>Assistant Professor</td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>Mr. S.B. Wakudkar</td>
-                <td>MSc (Agri)</td>
-                <td>Agronomy</td>
-                <td>Assistant Professor</td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>Miss. S.N. Atalkar</td>
-                <td>MSc (Agri)</td>
-                <td>Agril Economics</td>
-                <td>Assistant Professor</td>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td>Miss. K.N. Lokhande</td>
-                <td>MSc (Agri)</td>
-                <td>Agril Engineering</td>
-                <td>Assistant Professor</td>
-            </tr>
-            <tr>
-                <td>9</td>
-                <td>Miss. S.N. Waghmare</td>
-                <td>MSc (Agri)</td>
-                <td>Agril Entomology</td>
-                <td>Assistant Professor</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+            <div class="table-container">
+             <table>
+                <thead>
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>Name</th>
+                        <th>Qualification</th>
+                        <th>Department</th>
+                        <th>Designation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Dr. R.M. Kshirsagar</td>
+                        <td>MSc PhD</td>
+                        <td>Agril Botany</td>
+                        <td>Principal</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Mr. A.D. Manvatkar</td>
+                        <td>MSc (Agri)</td>
+                        <td>Agronomy</td>
+                        <td>Vice Principal</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Mr. P.T. Nichal</td>
+                        <td>MSc (Agri)</td>
+                        <td>Plant Pathology</td>
+                        <td>Assistant Professor/ Education Incharge</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Mr. S.T. Jadhav</td>
+                        <td>MSc (Agri)</td>
+                        <td>SSAC</td>
+                        <td>Assistant Professor</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Mr. S.M. Gaikwad</td>
+                        <td>MSc (Agri)</td>
+                        <td>Agril Botany</td>
+                        <td>Assistant Professor</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Mr. S.B. Wakudkar</td>
+                        <td>MSc (Agri)</td>
+                        <td>Agronomy</td>
+                        <td>Assistant Professor</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Miss. S.N. Atalkar</td>
+                        <td>MSc (Agri)</td>
+                        <td>Agril Economics</td>
+                        <td>Assistant Professor</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Miss. K.N. Lokhande</td>
+                        <td>MSc (Agri)</td>
+                        <td>Agril Engineering</td>
+                        <td>Assistant Professor</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Miss. S.N. Waghmare</td>
+                        <td>MSc (Agri)</td>
+                        <td>Agril Entomology</td>
+                        <td>Assistant Professor</td>
+                    </tr>
+                </tbody>
+             </table>
+            </div>
 
 
     </div>

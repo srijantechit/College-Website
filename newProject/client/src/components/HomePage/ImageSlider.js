@@ -6,11 +6,12 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 const image1= 'images/image.jpg';
-const image2= 'images/image2.jpg';
-const image3= 'images/image3.jpg';
+const image2= 'images/image3.png';
+const image3= 'images/image2.jpg';
 const image4= 'images/image4.jpg';
 const image5= 'images/image5.jpg';
 const image6= 'images/image6.jpg';
+const image7= 'images/image7.jpg';
 const ImageSlider = () => {
     var settings = {
         dots: true,
@@ -45,6 +46,7 @@ const ImageSlider = () => {
       .slick-prev, .slick-next{
       display: none !important}`
       }
+      
     </style>
       <Slider {...settings} className="mb-52">
 
@@ -70,6 +72,10 @@ const ImageSlider = () => {
 
         <div className="carousel-item w-full 2xl:w-1/2">        
             <img src={process.env.PUBLIC_URL + image6} className="w-full width" alt="Agriculture 1" />       
+        </div>
+
+        <div className="carousel-item w-full 2xl:w-1/2">        
+            <img src={process.env.PUBLIC_URL + image7} className="w-full width" alt="Agriculture 1" />       
         </div>
 
       </Slider>
